@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Office Bonus Tracker</title>
+<style>
+:root{--bg:#f6f4ef;--card:#fff;--ink:#1d2a24;--mute:#66746c;--line:#e3dfd5;--green:#1f6b4a;--green2:#d9eee2;--gold:#b8860b;--gold2:#fbf1d3;--red:#b03a2e;--red2:#f8e1de;--bar:#e8e4d8}
+:root:not([data-theme="light"]){}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121815;--card:#1b2420;--ink:#eef2ee;--mute:#9bab9f;--line:#2c3832;--green:#58c493;--green2:#1c3a2c;--gold:#e0b84a;--gold2:#3a3216;--red:#ef8a7e;--red2:#3d1f1b;--bar:#2a342f}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:880px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:26px;margin:0 0 2px;letter-spacing:-.3px}
+.sub{color:var(--mute);font-size:14px;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.card h2{font-size:13px;text-transform:uppercase;letter-spacing:.8px;color:var(--mute);margin:0 0 10px}
+.big{font-size:40px;font-weight:700;letter-spacing:-1px;line-height:1}
+.big small{font-size:18px;font-weight:500;color:var(--mute);letter-spacing:0}
+.pill{display:inline-block;font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;margin-left:8px;vertical-align:middle}
+.ok{background:var(--green2);color:var(--green)}.warn{background:var(--gold2);color:var(--gold)}.bad{background:var(--red2);color:var(--red)}.na{background:var(--bar);color:var(--mute)}
+.track{position:relative;height:16px;background:var(--bar);border-radius:99px;margin:16px 0 6px;overflow:visible}
+.fill{height:100%;border-radius:99px;background:var(--green);min-width:0}
+.tick{position:absolute;top:-5px;width:2px;height:26px;background:var(--gold)}
+.tlab{position:absolute;top:24px;font-size:11px;color:var(--mute);transform:translateX(-50%);white-space:nowrap}
+.row{display:flex;justify-content:space-between;gap:10px;font-size:14px;padding:7px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}.row b{font-variant-numeric:tabular-nums}
+.note{font-size:13px;color:var(--mute);margin-top:10px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line)}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--mute)}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.full{margin-top:14px}
+.bars{display:flex;align-items:flex-end;gap:14px;height:120px;margin-top:8px}
+.bar{flex:1;background:var(--green);border-radius:6px 6px 0 0;position:relative;min-height:3px}
+.bar span{position:absolute;top:-20px;left:0;right:0;text-align:center;font-size:12px;font-weight:600}
+.bl{display:flex;gap:14px;font-size:12px;color:var(--mute)}.bl div{flex:1;text-align:center}
+ul{margin:6px 0 0;padding-left:20px;font-size:14px}li{margin:4px 0}
+.rule{border-left:4px solid var(--gold);padding-left:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Office Bonus Tracker</h1>
+  <div class="sub">Ray &amp; Ghero · Humbug year-end bonus · <span id="stamp">updating…</span></div>
+
+
+  <div class="card full" style="margin-top:0;margin-bottom:14px">
+    <h2>How it works</h2>
+    <p style="margin:0 0 8px"><b>The contest:</b> "Deck the Halls, Dodge the Cold" (Sep 2 to Dec 3). A customer refers a neighbor. When that neighbor books Humbug holiday lights and pays the 50% deposit, the customer gets $100 cash, the neighbor gets $100, and the customer is entered in four weekly $100 drawings and a $3,000 Cancun trip on Dec 4. Staff can earn the cash but can't win drawings.</p>
+    <p style="margin:0 0 8px"><b>The bonus starts Thursday, Oct 22; jobs booked before then don't count.</b> Two halves, $950 each (about half a month of base pay):</p>
+    <table>
+      <tr><th>Half</th><th>You earn it when</th><th class="n">Pays</th></tr>
+      <tr><td><b>One: contest</b></td><td>20 booked referral jobs from Oct 22 through Nov 30 (15 pays half, under 15 pays nothing), and every referral was logged the same day</td><td class="n">by Dec 18</td></tr>
+      <tr><td><b>Two: profit</b></td><td>Humbug hits <b>both</b> 2026 budget lines: $205,000 revenue and $69,550 net profit</td><td class="n">after Jan close</td></tr>
+    </table>
+    <p class="note" style="margin-top:10px">Your normal 2% commission on what you sell keeps running on top. Most you can earn from the bonus: $1,900 each.</p>
+    <table style="margin-top:6px">
+      <tr><th>If this happens</th><th class="n">You get</th></tr>
+      <tr><td>20+ jobs, all logged same day, budget hit</td><td class="n"><b>$1,900</b></td></tr>
+      <tr><td>17 jobs, all logged same day, budget hit</td><td class="n"><b>$1,425</b> ($475 + $950)</td></tr>
+      <tr><td>20+ jobs, budget missed</td><td class="n"><b>$950</b></td></tr>
+      <tr><td>22 jobs but one referral logged the next day, budget hit</td><td class="n"><b>$950</b> (half two only)</td></tr>
+      <tr><td>12 jobs, budget missed</td><td class="n"><b>$0</b></td></tr>
+    </table>
+  </div>
+
+  <div class="grid">
+    <div class="card" id="c1">
+      <h2>Half one · the contest</h2>
+      <div class="big" id="jobs">0<small> / 20 booked jobs</small><span class="pill warn" id="p1">started Oct 22</span></div>
+      <div class="track"><div class="fill" id="f1" style="width:0%"></div>
+        <div class="tick" style="left:75%"></div><div class="tlab" style="left:75%">15 · half pays</div>
+        <div class="tick" style="left:100%;transform:translateX(-2px)"></div><div class="tlab" style="left:94%">20 · full</div></div>
+      <div style="height:18px"></div>
+      <div class="row"><span>Deadline (deposit paid)</span><b id="dl">Nov 30</b></div>
+      <div class="row"><span>Days left</span><b id="dleft">—</b></div>
+      <div class="row"><span>Jobs still needed for full</span><b id="need">pending count</b></div>
+      <div class="row"><span>Pays by Dec 18</span><b id="pay1">pending count</b></div>
+      <div class="row"><span>Same-day logging misses</span><b id="late">none recorded</b></div>
+    </div>
+
+    <div class="card" id="c2">
+      <h2>Half two · the profit half</h2>
+      <div class="big" id="rev">$0<small> / $205,000 revenue</small><span class="pill warn" id="p2">in progress</span></div>
+      <div class="track"><div class="fill" id="f2" style="width:0%"></div></div>
+      <div style="height:6px"></div>
+      <div class="row"><span>Installs completed</span><b id="inst">—</b></div>
+      <div class="row"><span>Revenue still to go</span><b id="togo">—</b></div>
+      <div class="row"><span>Net profit target</span><b id="net">$69,550</b></div>
+      <div class="row"><span>Net profit so far</span><b id="netnow">after January close</b></div>
+      <div class="row"><span>Pays</span><b>after January close</b></div>
+      <div class="note">All or nothing: revenue <b>and</b> net profit both have to hit budget.</div>
+    </div>
+  </div>
+
+  <div class="card full">
+    <h2>What's on the line, each</h2>
+    <table>
+      <tr><th>Person</th><th class="n">Half one</th><th class="n">Half two</th><th class="n">Both halves</th></tr>
+      <tbody id="ppl"></tbody>
+    </table>
+    <div class="note">Your normal 2% commission on what you sell keeps running on top. This is a bonus, not a 13th month, and nothing here is guaranteed.</div>
+  </div>
+
+  <div class="card full">
+    <h2>Production by week</h2>
+    <div class="bars" id="bars"></div><div class="bl" id="bl"></div>
+    <div class="note" id="wknote">Completed installs, from ServiceMinder.</div>
+  </div>
+
+  <div class="card full rule">
+    <h2>The rules that matter</h2>
+    <ul>
+      <li><b>Log every referral the same day,</b> with name, service address and phone, and claim it in the Teams channel. One referral logged the next day voids half one for both of you.</li>
+      <li>A booked job means the neighbor booked a Humbug install and paid the 50% deposit by Nov 30. The install can happen later. Commercial and HOA count; 2025 Humbug customers don't.</li>
+      <li>You have to still be employed when each half pays. Cameron approves every payout on the evidence.</li>
+    </ul>
+  </div>
+</div>
+
+<script id="seed" type="application/json">{"updatedAt": "2026-10-22T13:20:00-05:00", "people": ["Ray Torres", "Ghero Navilla"], "perHalf": 950, "contest": {"bookedJobs": 0, "target": 20, "floor": 15, "deadline": "2026-11-30", "payoutBy": "2026-12-18", "lateLogs": 0, "startDate": "2026-10-22"}, "profit": {"revenue": 12154, "revenueGoal": 205000, "installs": 7, "netProfit": null, "netGoal": 69550, "asOf": "2026-10-21"}, "weeks": [{"label": "Sep 21", "production": 3996}, {"label": "Oct 19", "production": 8158}]}</script>
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i)};
+  var money=function(n){return "$"+Math.round(n).toLocaleString("en-US")};
+  function render(d){
+    var c=d.contest,p=d.profit;
+    var st=new Date(d.updatedAt);
+    $("stamp").textContent="Updated "+st.toLocaleString("en-US",{weekday:"short",month:"short",day:"numeric",hour:"numeric",minute:"2-digit"});
+    // half one
+    var dl=new Date(c.deadline+"T23:59:59-06:00"),now=new Date();
+    var left=Math.max(0,Math.ceil((dl-now)/86400000));
+    $("dleft").textContent=left+" day"+(left==1?"":"s");
+    var j=c.bookedJobs;
+    if(j===null||j===undefined){
+      $("jobs").firstChild.nodeValue="Not counted yet";
+      $("pay1").textContent="pending count";$("need").textContent="pending count";
+    }else{
+      $("jobs").firstChild.nodeValue=String(j);
+      var pill=$("p1");
+      var late=(c.lateLogs||0)>0;
+      var pay=late?0:(j>=c.target?d.perHalf:(j>=c.floor?d.perHalf/2:0));
+      $("f1").style.width=Math.min(100,j/c.target*100)+"%";
+      $("need").textContent=Math.max(0,c.target-j);
+      $("pay1").textContent=money(pay)+" each (right now)";
+      if(late){pill.className="pill bad";pill.textContent="voided"}
+      else if(j>=c.target){pill.className="pill ok";pill.textContent="full pay"}
+      else if(j>=c.floor){pill.className="pill warn";pill.textContent="half pay"}
+      else{pill.className="pill bad";pill.textContent="under 15"}
+    }
+    if(c.lateLogs!==null&&c.lateLogs!==undefined){$("late").textContent=c.lateLogs===0?"none":c.lateLogs+" (half one void)"}
+    // half two
+    $("rev").firstChild.nodeValue=money(p.revenue);
+    $("f2").style.width=Math.min(100,p.revenue/p.revenueGoal*100)+"%";
+    $("inst").textContent=p.installs;
+    $("togo").textContent=money(Math.max(0,p.revenueGoal-p.revenue));
+    $("net").textContent=money(p.netGoal);
+    if(p.netProfit!==null&&p.netProfit!==undefined)$("netnow").textContent=money(p.netProfit);
+    $("p2").textContent=Math.round(p.revenue/p.revenueGoal*100)+"% of goal";
+    // people
+    var h="";d.people.forEach(function(n){h+="<tr><td>"+n+"</td><td class='n'>"+money(d.perHalf)+"</td><td class='n'>"+money(d.perHalf)+"</td><td class='n'><b>"+money(d.perHalf*2)+"</b></td></tr>"});
+    $("ppl").innerHTML=h;
+    // weeks
+    var mx=Math.max.apply(null,d.weeks.map(function(w){return w.production}).concat([1]));
+    $("bars").innerHTML=d.weeks.map(function(w){return "<div class='bar' style='height:"+Math.max(3,w.production/mx*100)+"%'><span>"+money(w.production)+"</span></div>"}).join("");
+    $("bl").innerHTML=d.weeks.map(function(w){return "<div>Wk of "+w.label+"</div>"}).join("");
+    $("wknote").textContent="Completed installs from ServiceMinder, through "+new Date(p.asOf+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric"})+".";
+  }
+  var seed=JSON.parse($("seed").textContent);
+  render(seed);
+  try{fetch("data.json?"+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():null}).then(function(d){if(d)render(d)}).catch(function(){})}catch(e){}
+})();
+</script>
+</body>
+</html>
